@@ -68,3 +68,29 @@ jobs:
     steps:
       # checkout code
       - uses: actions/checkout@v4
+
+      # - uses: 'google-github-actions/auth@v2'
+      #   id: auth
+      #   name: Authenticate to GCP
+      #   with:
+      #     project_id: 'cicd-pete4d' # update with your project ID
+      #     workload_identity_provider: 'projects/676224219461/locations/global/workloadIdentityPools/github/providers/my-repo' # update with your Workload Identity Pool
+
+      # # configure/login with docker
+      # - name: gcloud Configure Docker
+      #   run: gcloud auth configure-docker us-east4-docker.pkg.dev
+
+      # # setup docker buildx
+      # - name: Setup docker buildx
+      #   uses: docker/setup-buildx-action@v3
+      #   with:
+      #     platforms: linux/amd64,linux/arm64
+
+      # # build and push the image
+      # - name: Build and Push
+      #   uses: docker/build-push-action@v6
+      #   with:
+      #     context: ./
+      #     file: ./Dockerfile
+      #     push: true
+      #     tags: us-east4-docker.pkg.dev/cicd-pete4d/artifact-registry-pete4d
