@@ -12,6 +12,7 @@ WORKDIR  /app
 COPY --from=builder /usr /usr
 COPY --from=builder /app /app
 EXPOSE 8000
-COPY entrypoint.sh /app
-ENTRYPOINT ["./entrypoint.sh"]
+
+ENV PATH=$PATH:/app/.venv/bin
+
 CMD ["uvicorn", "cc_compose.server:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
