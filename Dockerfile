@@ -8,10 +8,9 @@ RUN poetry config virtualenvs.create false \
 && poetry install --no-root --no-interaction --no-ansi
 
 FROM python:3.11-buster AS app
-COPY --from=0 /usr /usr
-COPY --from=0 /app /app
+COPY --from=builder /usr /usr
+COPY --from=builder /app /app
 WORKDIR  /app
-
 EXPOSE 8000
 COPY entrypoint.sh /app
 ENTRYPOINT ["./entrypoint.sh"]
