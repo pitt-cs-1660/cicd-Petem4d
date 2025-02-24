@@ -77,7 +77,7 @@ jobs:
 
       # configure/login with docker
       - name: gcloud Configure Docker
-        run: gcloud auth configure-docker [us-east4]-docker.pkg.dev
+        run: gcloud auth configure-docker us-east4-docker.pkg.dev
 
       # setup docker buildx
       - name: Setup docker buildx
