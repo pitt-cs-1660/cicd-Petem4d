@@ -10,7 +10,9 @@ services:
       timeout: 60s
       retries: 5
     ### Add environment variables here
-
+    environment:
+      - DATABASE_URL = postgres://postgres:postgrespassword@postgres:5432/tasksdb
+    
     ### Add depends postgres here
     depends_on:
       - postgres
